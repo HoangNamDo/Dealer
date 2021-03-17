@@ -23,7 +23,6 @@ for c in s:
 d = {1: "Sắt", 2: "Cây", 3: "Nước", 4: "Lửa", 5: "Đất"}
 l = {1: "I", 2: "II", 3: "III"}
 
-
 def countCard(deck):
     p = []
     for i in range(1, 6):
@@ -31,7 +30,6 @@ def countCard(deck):
             if deck.count((i, j)) != 0:
                 p += [str(deck.count((i, j))) + " " + d[i] + " " + l[j]]
     print(", ".join(p) + ".")
-
 
 def drawOneCard(card):
     for i in range(7):
@@ -44,7 +42,6 @@ def drawOneCard(card):
         else:
             print("|       |")
 
-
 n = int(input("Có tất cả bao nhiêu người chơi?: "))
 m = int(input("Bạn là người chơi thứ mấy?: ")) - 1
 while m < 0 or m >= n:
@@ -56,12 +53,15 @@ print()
 countCard(a[5 * m : 5 * (m + 1)])
 print()
 print("[BẮT ĐẦU]" + "-" * 38 + "[RÚT BÀI: ENTER]")
-NguHanh = 5 * n + m
 
-while NguHanh < 60:
+deck = 5 * n + m
+count = 1
+
+while deck < 60:
     input()
-    print("Lần " + str((NguHanh - 5 * n) // 2 + 1) + ":")
-    drawOneCard(a[NguHanh])
-    NguHanh += n
-    if NguHanh >= 60:
+    print("Lần " + str(count) + ":")
+    drawOneCard(a[deck])
+    deck += n
+    count += 1
+    if deck >= 60:
         print("Hết quân bài ngũ hành để rút!")
