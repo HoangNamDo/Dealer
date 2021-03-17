@@ -24,7 +24,6 @@ d = {1: "Cây", 2: "Đất", 3: "Nước", 4: "Lửa", 5: "Sắt"}
 ddd = {"c": 1, "d": 2, "n": 3, "l": 4, "s": 5}
 l = {1: "I", 2: "II", 3: "III"}
 
-
 def countCards(deck):
     p = []
     for i in range(1, 6):
@@ -75,11 +74,11 @@ lguard = []
 rguard = []
 
 while True:
-    print("Bài trên tay: ")
+    print("Trên tay có " + str(len(hand)) + " quân bài:")
     for i in range(1, 6):
         x = sum(j * hand.count((i, j)) for j in range(1, 4))
         if x:
-            print(x, d[i] + ":", end=" ")
+            print(f"[{x}] " + d[i].upper() + ":", end=" ")
             countCard(hand, i)
     if lguard:
         print("Úp trái: ", end="")
