@@ -369,7 +369,11 @@ while True:
                 )
                 ENTER()
                 if k == 1:
+                    print("Quân thắng trận đã rút về quân khu an toàn!")
                     territory += card + cardChange + guard
+                else:
+                    print("Quân thắng trận đã đóng quân trên lãnh thổ của đối thủ!")
+                ENTER()
         else:
             print(
                 "Quân bạn đã chọn để đóng quân trên lãnh thổ của đối thủ là: ", end=""
