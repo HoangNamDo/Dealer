@@ -364,7 +364,12 @@ while True:
             t = int(input("Kết quả của trận đánh: [1] Thắng | [2] Thua | => "))
             ENTER()
             if t == 1:
-                territory += card + cardChange + guard
+                k = int(
+                    input("Quân thắng trận: [1] Rút về quân khu | [2] Đóng quân | => ")
+                )
+                ENTER()
+                if k == 1:
+                    territory += card + cardChange + guard
         else:
             print(
                 "Quân bạn đã chọn để đóng quân trên lãnh thổ của đối thủ là: ", end=""
