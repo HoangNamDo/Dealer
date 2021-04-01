@@ -538,5 +538,5 @@ while True:
         hand += [a[deck]]
         deck += n
         count += 1
-        if deck >= 80:
+        if deck >= 70:
             print("Đã hết quân chi viện!")
