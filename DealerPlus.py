@@ -311,28 +311,6 @@ while True:
             ENTER()
         card = []
         cardChange = []
-        if lguardX:
-            h = int(
-                input(
-                    "Dùng quân mai phục ở cánh trái đã bị lộ diện tham gia tác chiến: [1] Có | [2] Không | => "
-                )
-            )
-            if h == 1:
-                guard += lguardX
-                lguardX = []
-                lguard = []
-            ENTER()
-        if rguardX:
-            h = int(
-                input(
-                    "Dùng quân mai phục ở cánh phải đã bị lộ diện tham gia tác chiến: [1] Có | [2] Không | => "
-                )
-            )
-            if h == 1:
-                guard += rguardX
-                rguardX = []
-                rguard = []
-            ENTER()
         for c in t.split():
             if len(c) == 3:
                 card += [(d3[c[1]], int(c[2]))] * int(c[0])
@@ -352,6 +330,28 @@ while True:
                 else:
                     card += [(0, k2["".join(sorted(c[:2]))])]
                     cardChange += [(d3[c[3]], 1)]
+        if lguardX and lguardX[0][0] == d3[t.split()[0][1]]:
+            h = int(
+                input(
+                    "Dùng quân mai phục ở cánh trái đã bị lộ diện tham gia tác chiến: [1] Có | [2] Không | => "
+                )
+            )
+            if h == 1:
+                guard += lguardX
+                lguardX = []
+                lguard = []
+            ENTER()
+        if rguardX and rguardX[0][0] == d3[t.split()[0][1]]:
+            h = int(
+                input(
+                    "Dùng quân mai phục ở cánh phải đã bị lộ diện tham gia tác chiến: [1] Có | [2] Không | => "
+                )
+            )
+            if h == 1:
+                guard += rguardX
+                rguardX = []
+                rguard = []
+            ENTER()
         if s == 1:
             print("Quân bạn đã chọn để bảo vệ lãnh thổ là: ", end="")
             countCards(card + guard)
